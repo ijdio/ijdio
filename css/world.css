@@ -1,0 +1,465 @@
+.app-body {
+	--color-text: #fff;
+	--color-bg: #000;
+	--color-link: #fff;
+	--color-link-hover: #ac1122;
+	--color-info: #ac1122;
+	--color-title: #fff;
+	--color-subtitle: #fff;
+	--color-subtitle-bg: #ac1122;
+}
+
+
+
+.content__overlay {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 100;
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center children vertically */
+    align-items: center; /* Center children horizontally */
+    padding-top: 0; /* Remove padding if using flexbox */
+}
+
+.content__inner {
+	padding-top: 40vh;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	align-content: center;
+}
+
+.content__title {
+	position: relative;
+	font-family: 'Playfair Display', serif;
+	font-size: 7vw;
+	font-weight: normal;
+	color: var(--color-title);
+	text-align: center;
+	margin: 0;
+	pointer-events: none;
+}
+
+.content__subtitle {
+	font-size: 1.25em;
+	background: var(--color-subtitle-bg);
+	color: var(--color-subtitle);
+	padding: 0.45em 0.5em;
+	line-height: 1;
+	margin: 0;
+	letter-spacing: 0.5em;
+	text-indent: 0.5em;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.icon-row {
+	position: fixed;
+	top: 68%;
+    display: flex; /* Align icons in a row */
+    justify-content: space-around; /* Space them evenly */
+    align-items: center; /* Center them vertically */
+    margin: 20px 0; /* Add some margin above and below the row */
+}
+
+.icon-wrapper {
+    display: inline-flex; /* Align items in a row */
+    justify-content: center; /* Center the icon */
+    align-items: center; /* Center the icon vertically */
+    width: 5vh; /* Adjust the size of the circle */
+    height: 5vh; /* Adjust the size of the circle */
+	min-width: 24px;
+	min-height: 24px;
+    border-radius: 50%; /* Make it a circle */
+    background-color: rgba(255, 255, 255, 0.1); /* White with 50% opacity */
+    margin: 20px; /* Space between icons */
+
+	border: 0 solid;
+	box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+	outline: 1px solid;
+	outline-color: rgba(255, 255, 255, .5);
+	outline-offset: 0px;
+	text-shadow: none;
+	transition: all 900ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.icon-wrapper:hover {
+	border: 1px solid;
+	outline-color: rgba(255, 255, 255, 0);
+	outline-offset: 15px;
+	background-color: rgba(255, 255, 255, 0.2); 
+}
+
+.icon {
+    width: 3vh; /* Shrink the size of the icons */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+@media screen and (max-width: 55em) {
+	.content__title {
+		font-size: 3em;
+	}
+	.content__subtitle {
+		font-size: 0.85em;
+	}
+}
+
+/* BUTTON */
+
+  @-webkit-keyframes animateTop {
+	0% {
+	  -webkit-transform: translateX(100%);
+			  transform: translateX(100%);
+	}
+	100% {
+	  -webkit-transform: translateX(-100%);
+			  transform: translateX(-100%);
+	}
+  }
+  
+  @keyframes animateTop {
+	0% {
+	  -webkit-transform: translateX(100%);
+			  transform: translateX(100%);
+	}
+	100% {
+	  -webkit-transform: translateX(-100%);
+			  transform: translateX(-100%);
+	}
+  }
+
+  @-webkit-keyframes animateRight {
+	0% {
+	  -webkit-transform: translateY(100%);
+			  transform: translateY(100%);
+	}
+	100% {
+	  -webkit-transform: translateY(-100%);
+			  transform: translateY(-100%);
+	}
+  }
+  
+  @keyframes animateRight {
+	0% {
+	  -webkit-transform: translateY(100%);
+			  transform: translateY(100%);
+	}
+	100% {
+	  -webkit-transform: translateY(-100%);
+			  transform: translateY(-100%);
+	}
+  }
+
+  @-webkit-keyframes animateBottom {
+	0% {
+	  -webkit-transform: translateX(-100%);
+			  transform: translateX(-100%);
+	}
+	100% {
+	  -webkit-transform: translateX(100%);
+			  transform: translateX(100%);
+	}
+  }
+  
+  @keyframes animateBottom {
+	0% {
+	  -webkit-transform: translateX(-100%);
+			  transform: translateX(-100%);
+	}
+	100% {
+	  -webkit-transform: translateX(100%);
+			  transform: translateX(100%);
+	}
+  }
+
+  @-webkit-keyframes animateLeft {
+	0% {
+	  -webkit-transform: translateY(-100%);
+			  transform: translateY(-100%);
+	}
+	100% {
+	  -webkit-transform: translateY(100%);
+			  transform: translateY(100%);
+	}
+  }
+  
+  @keyframes animateLeft {
+	0% {
+	  -webkit-transform: translateY(-100%);
+			  transform: translateY(-100%);
+	}
+	100% {
+	  -webkit-transform: translateY(100%);
+			  transform: translateY(100%);
+	}
+  }
+  
+  .connect-button {
+	position: fixed;
+	top: 60%;
+
+	padding: 2vh 3vw;
+	margin: 0;
+	min-width: 120px;
+	min-height: 45px;
+	cursor: pointer;
+
+	background: linear-gradient(-30deg, #3d0b0b 50%, #2b0808 50%);
+	
+	display: inline-block;
+	-webkit-transform: translate(0%, 0%);
+			transform: translate(0%, 0%);
+	overflow: hidden;
+	opacity: 0.9;
+	color: #ffffff;
+	font-size: 1em;
+	letter-spacing: 2.5px;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+	-webkit-box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+			box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  }
+
+  .connect-button::before {
+	content: '';
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: #ad8585;
+	opacity: 0;
+	-webkit-transition: .2s opacity ease-in-out;
+	transition: .2s opacity ease-in-out;
+  }
+
+  .connect-button:active {
+    transform: translateY(-1px);
+}
+  
+  .connect-button span {
+	position: absolute;
+  }
+  
+  .connect-button span:nth-child(1) {
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 2px;
+	background: -webkit-gradient(linear, right top, left top, from(rgba(43, 8, 8, 0)), to(#d92626));
+	background: linear-gradient(to left, rgba(43, 8, 8, 0), #d92626);
+	-webkit-animation: 2s animateTop linear infinite;
+			animation: 2s animateTop linear infinite;
+  }
+
+  .connect-button span:nth-child(2) {
+	top: 0px;
+	right: 0px;
+	height: 100%;
+	width: 2px;
+	background: -webkit-gradient(linear, left bottom, left top, from(rgba(43, 8, 8, 0)), to(#d92626));
+	background: linear-gradient(to top, rgba(43, 8, 8, 0), #d92626);
+	-webkit-animation: 2s animateRight linear -1s infinite;
+			animation: 2s animateRight linear -1s infinite;
+  }
+  
+  .connect-button span:nth-child(3) {
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 2px;
+	background: -webkit-gradient(linear, left top, right top, from(rgba(43, 8, 8, 0)), to(#d92626));
+	background: linear-gradient(to right, rgba(43, 8, 8, 0), #d92626);
+	-webkit-animation: 2s animateBottom linear infinite;
+			animation: 2s animateBottom linear infinite;
+  }
+  
+  
+  .connect-button span:nth-child(4) {
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 2px;
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(43, 8, 8, 0)), to(#d92626));
+	background: linear-gradient(to bottom, rgba(43, 8, 8, 0), #d92626);
+	-webkit-animation: 2s animateLeft linear -1s infinite;
+			animation: 2s animateLeft linear -1s infinite;
+  }
+
+  .connect-button:hover {
+	background: linear-gradient(-30deg, #0b243d 50%, #081a2b 50%);
+	padding: 2vh 3vw;
+	margin: 0;
+	min-width: 120px;
+	min-height: 45px;
+	display: inline-block;
+	-webkit-transform: translate(0%, 0%);
+			transform: translate(0%, 0%);
+	overflow: hidden;
+	color: #ffffff;
+	font-size: 1em;
+	letter-spacing: 2.5px;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+	-webkit-box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+			box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  }
+  
+  .connect-button::before {
+	content: '';
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: #8599ad;
+	opacity: 0;
+	-webkit-transition: .2s opacity ease-in-out;
+	transition: .2s opacity ease-in-out;
+  }
+  
+  .connect-button:hover span:nth-child(1) {
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 2px;
+	background: -webkit-gradient(linear, right top, left top, from(rgba(8, 26, 43, 0)), to(#2680d9));
+	background: linear-gradient(to left, rgba(8, 26, 43, 0), #2680d9);
+	-webkit-animation: 2s animateTop linear infinite;
+			animation: 2s animateTop linear infinite;
+  }
+  
+  .connect-button:hover span:nth-child(2) {
+	top: 0px;
+	right: 0px;
+	height: 100%;
+	width: 2px;
+	background: -webkit-gradient(linear, left bottom, left top, from(rgba(8, 26, 43, 0)), to(#2680d9));
+	background: linear-gradient(to top, rgba(8, 26, 43, 0), #2680d9);
+	-webkit-animation: 2s animateRight linear -1s infinite;
+			animation: 2s animateRight linear -1s infinite;
+  }
+  
+  .connect-button:hover span:nth-child(3) {
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 2px;
+	background: -webkit-gradient(linear, left top, right top, from(rgba(8, 26, 43, 0)), to(#2680d9));
+	background: linear-gradient(to right, rgba(8, 26, 43, 0), #2680d9);
+	-webkit-animation: 2s animateBottom linear infinite;
+			animation: 2s animateBottom linear infinite;
+  }
+  
+  .connect-button:hover span:nth-child(4) {
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 2px;
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(8, 26, 43, 0)), to(#2680d9));
+	background: linear-gradient(to bottom, rgba(8, 26, 43, 0), #2680d9);
+	-webkit-animation: 2s animateLeft linear -1s infinite;
+			animation: 2s animateLeft linear -1s infinite;
+  }
+  
+
+
+  /* BLUE BUTTON */
+  .connect-button-blue {
+	position: fixed;
+	top: 60%;
+
+	padding: 2vh 3vw;
+	margin: 0;
+	min-width: 120px;
+	min-height: 45px;
+	cursor: pointer;
+
+	background: linear-gradient(-30deg, #0b243d 50%, #081a2b 50%);
+	
+	display: inline-block;
+	-webkit-transform: translate(0%, 0%);
+			transform: translate(0%, 0%);
+	overflow: hidden;
+	opacity: 0.9;
+	color: #ffffff;
+	font-size: 1em;
+	letter-spacing: 2.5px;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+	-webkit-box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+			box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  }
+
+  .connect-button-blue::before {
+	content: '';
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: #ad8585;
+	opacity: 0;
+	-webkit-transition: .2s opacity ease-in-out;
+	transition: .2s opacity ease-in-out;
+  }
+  
+  .connect-button-blue span {
+	position: absolute;
+  }
+  
+  .connect-button-blue span:nth-child(1) {
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 2px;
+	background: -webkit-gradient(linear, left top, right top, from(rgba(8, 26, 43, 0)), to(#2680d9));
+	background: linear-gradient(to right, rgba(8, 26, 43, 0), #2680d9);
+	-webkit-animation: 2s animateTop linear infinite;
+			animation: 2s animateTop linear infinite;
+  }
+
+  .connect-button-blue span:nth-child(2) {
+	top: 0px;
+	right: 0px;
+	height: 100%;
+	width: 2px;
+	background: -webkit-gradient(linear, left top, right top, from(rgba(8, 26, 43, 0)), to(#2680d9));
+	background: linear-gradient(to right, rgba(8, 26, 43, 0), #2680d9);
+	-webkit-animation: 2s animateRight linear -1s infinite;
+			animation: 2s animateRight linear -1s infinite;
+  }
+  
+  .connect-button-blue span:nth-child(3) {
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 2px;
+	background: -webkit-gradient(linear, left top, right top, from(rgba(8, 26, 43, 0)), to(#2680d9));
+	background: linear-gradient(to right, rgba(8, 26, 43, 0), #2680d9);
+	-webkit-animation: 2s animateBottom linear infinite;
+			animation: 2s animateBottom linear infinite;
+  }
+  
+  
+  .connect-button-blue span:nth-child(4) {
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 2px;
+	background: -webkit-gradient(linear, left top, right top, from(rgba(8, 26, 43, 0)), to(#2680d9));
+	background: linear-gradient(to right, rgba(8, 26, 43, 0), #2680d9);
+	-webkit-animation: 2s animateLeft linear -1s infinite;
+			animation: 2s animateLeft linear -1s infinite;
+  }
